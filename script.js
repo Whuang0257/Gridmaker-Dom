@@ -38,3 +38,15 @@ function addCol(){
         cols++;
     }
 }
+
+function removeRow(){
+    if (rows !== 0) {
+        let row = grid.lastElementChild //returns last child of the element
+        grid.removeChild(row); //remove the last child
+        row--;
+
+        if (row === 0) {
+            cols = 0; //in case of 1x1 grid
+        }
+    }
+}

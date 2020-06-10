@@ -11,10 +11,10 @@ function addRow(){
         rows++;
         cols++;
     } else {
-        let row = document.createElement("tr");
+        let row = document.createElement("tr"); //creating a blank row
         for (let i = 0; i < cols; i++) {
-            let col = document.createElement("td");
-            row.appendChild(col);
+            let col = document.createElement("td"); //if col is > 0, new row will be added with col #
+            row.appendChild(col); 
         }
         rows++;
         grid.appendChild(row);

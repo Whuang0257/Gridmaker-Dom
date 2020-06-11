@@ -66,14 +66,12 @@ function addCol(){
     if (rows === 0) {
         let row = document.createElement("tr"); //creating a blank row
         let col = document.createElement("td"); //creating a col to add to blank row
-
         
         //Add event listeners to newly created cells
         col.addEventListener("click", colorOnClick);
         col.addEventListener("mousemove", colorOnMove); 
         col.addEventListener("mousedown", () => { mousePressed = true;});
         col.addEventListener("mouseup", () => { mousePressed = false;});
-        
 
         row.appendChild(col); //adding a col to row which is then added to the grid
         grid.appendChild(row);

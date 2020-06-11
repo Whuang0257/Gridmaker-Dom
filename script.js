@@ -69,3 +69,17 @@ function removeCol(){
         }
     }
 }
+
+function fillUncolored(){
+    let color = document.getElementById("selectedID").value;
+    
+    if(color !== "SELECT"){
+       let allCells = document.getElementsByTagName("td");
+        for(let i = 0; i < allCells.length; i++){
+            // console.log(allCells[i].style.backgroundColor);
+            if(allCells[i].style.backgroundColor === ""){
+                allCells[i].style.backgroundColor = color.toLowerCase();
+            }
+        }
+    }
+}

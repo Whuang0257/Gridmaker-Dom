@@ -144,6 +144,7 @@ function fillUncolored(){
     }
 }
 
+//Fills all cells with currently selected color
 function fillAll(){
     let color = document.getElementById("selectedID").value;
     
@@ -155,6 +156,7 @@ function fillAll(){
     }
 }
 
+//Clear/Restore all cells to their original/initial color
 function clearAll(){
     let allCells = document.getElementsByTagName("td");
     for(let i = 0; i < allCells.length; i++){

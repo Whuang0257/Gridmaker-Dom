@@ -35,6 +35,7 @@ function addRow(){
         let col = document.createElement("td"); //creating a col to add to blank row
         
         //Add event listeners to newly created cells
+        col.addEventListener("click", colorOnClick);
         col.addEventListener("mousemove", colorOnMove); 
         col.addEventListener("mousedown", () => { mousePressed = true;});
         col.addEventListener("mouseup", () => { mousePressed = false;});
@@ -49,6 +50,7 @@ function addRow(){
             let col = document.createElement("td"); //if col is > 0, new row will be added with col #
             
             //Add event listeners to newly created cells
+            col.addEventListener("click", colorOnClick);
             col.addEventListener("mousemove", colorOnMove); 
             col.addEventListener("mousedown", () => { mousePressed = true;});
             col.addEventListener("mouseup", () => { mousePressed = false;});
@@ -64,9 +66,9 @@ function addCol(){
     if (rows === 0) {
         let row = document.createElement("tr"); //creating a blank row
         let col = document.createElement("td"); //creating a col to add to blank row
-
         
         //Add event listeners to newly created cells
+        col.addEventListener("click", colorOnClick);
         col.addEventListener("mousemove", colorOnMove); 
         col.addEventListener("mousedown", () => { mousePressed = true;});
         col.addEventListener("mouseup", () => { mousePressed = false;});
@@ -81,6 +83,7 @@ function addCol(){
             let col = document.createElement("td"); //creating a col
             
             //Add event listeners to newly created cells
+            col.addEventListener("click", colorOnClick);
             col.addEventListener("mousemove", colorOnMove); 
             col.addEventListener("mousedown", () => { mousePressed = true;});
             col.addEventListener("mouseup", () => { mousePressed = false;});

@@ -19,16 +19,18 @@ function colorOnMove(){
     }
 }
 
-//colorOnClick is called when the click event liustener is triggered for td elements
+//colorOnClick is called when the click event listener is triggered for td elements
 function colorOnClick(){
     let color = document.getElementById("selectedID").value;
 
     //Only changes colors when a color is selected
     if(color != "SELECT"){
+        
         event.target.style.backgroundColor = color.toLowerCase();
     }
 }
 
+//Adds rows to the grid
 function addRow(){
     if (rows === 0) {
         let row = document.createElement("tr"); //creating a blank row
@@ -62,6 +64,7 @@ function addRow(){
     }
 }
 
+//Adds a column to the grid  
 function addCol(){
     if (rows === 0) {
         let row = document.createElement("tr"); //creating a blank row
@@ -94,6 +97,7 @@ function addCol(){
     }
 }
 
+//Removes a row from the grid 
 function removeRow(){
     if (rows !== 0) {
         let row = grid.lastElementChild //returns last child of the element
@@ -106,6 +110,7 @@ function removeRow(){
     }
 }
 
+//Removes a column from the grid
 function removeCol(){
     if (rows !== 0) {
         let allRows = document.getElementsByTagName("tr");
@@ -124,6 +129,7 @@ function removeCol(){
     }
 }
 
+//Fills all uncolored cells with the currently selected color
 function fillUncolored(){
     let color = document.getElementById("selectedID").value;
     

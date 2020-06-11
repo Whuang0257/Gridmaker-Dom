@@ -1,4 +1,5 @@
 let grid = document.getElementById("grid");
+let gridBody = grid.firstElementChild; 
 let rows = 0;
 let cols = 0;
 
@@ -26,7 +27,7 @@ function addCol(){
         let row = document.createElement("tr"); //creating a blank row
         let col = document.createElement("td"); //creating a col to add to blank row
         row.appendChild(col); //adding a col to row which is then added to the grid
-        grid.appendChild(col);
+        grid.appendChild(row);
         rows++;
         cols++;
     } else {
@@ -43,10 +44,28 @@ function removeRow(){
     if (rows !== 0) {
         let row = grid.lastElementChild //returns last child of the element
         grid.removeChild(row); //remove the last child
-        row--;
+        rows--;
 
-        if (row === 0) {
+        if (rows === 0) {
             cols = 0; //in case of 1x1 grid
+        }
+    }
+}
+
+function removeCol(){
+    if (rows !== 0) {
+        let allRows = document.getElementsByTagName("tr");
+        for(let i = 0; i < rows; i++){
+            let col = allRows[i].lastElementChild;
+            allRows[i].removeChild(col);
+        }
+        cols--;
+
+        if(cols === 0) {
+            while(grid.firstChild){
+                grid.removeChild(grid.firstChild);
+            }
+            rows = 0;
         }
     }
 }
